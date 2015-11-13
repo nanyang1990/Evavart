@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDPlusPlus_Builder_Version_1.0.0>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <comment> Rand.ma&#xd;</comment>
+  <comment> Author: Ryan Lawler&#xd;</comment>
+  <comment/>
+  <comment> Description: This model describes random movement of people in a&#xd;</comment>
+  <comment> building.&#xd;</comment>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <top>
+    <components> Rand&#xd;</components>
+  </top>
+  <Rand>
+    <type> cell&#xd;</type>
+    <dim> (17, 17)&#xd;</dim>
+    <delay> transport&#xd;</delay>
+    <defaultDelayTime> 1000&#xd;</defaultDelayTime>
+    <border> nowrapped&#xd;</border>
+    <comment>5x5 Neighborhood&#xd;</comment>
+    <neighbors> Rand(-2,-2) Rand(-2,-1) Rand(-2,0) Rand(-2,1) Rand(-2,2)&#xd;</neighbors>
+    <neighbors> Rand(-1,-2) Rand(-1,-1) Rand(-1,0)  Rand(-1,1) Rand(-1,2)&#xd;</neighbors>
+    <neighbors> Rand(0,-2)  Rand(0,-1)  Rand(0,0)   Rand(0,1)  Rand(0,2)&#xd;</neighbors>
+    <neighbors> Rand(1,-2)  Rand(1,-1)  Rand(1,0)   Rand(1,1)  Rand(1,2)&#xd;</neighbors>
+    <neighbors> Rand(2,-2)  Rand(2,-1)  Rand(2,0)   Rand(2,1)  Rand(2,2)&#xd;</neighbors>
+    <comment>Initialize Floor Map&#xd;</comment>
+    <initialvalue> -1&#xd;</initialvalue>
+    <initialCellsValue> Rand.val&#xd;</initialCellsValue>
+    <comment>Floor plane&#xd;</comment>
+    <zone> floor_plane 	{ (0,0)..(16,16) }&#xd;</zone>
+    <localtransition> standard-rule&#xd;</localtransition>
+  </Rand>
+</CDPlusPlus_Builder_Version_1.0.0>

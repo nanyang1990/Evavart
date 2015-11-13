@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDPlusPlus_Builder_Version_1.0.0>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <comment> FTH.ma&#xd;</comment>
+  <comment> Author: Ryan Lawler&#xd;</comment>
+  <comment/>
+  <comment> Description: This model describes a follow the herd evacuation procedure&#xd;</comment>
+  <comment> for a mix of people who are familiar or unfamiliar with the surroundings. &#xd;</comment>
+  <comment> Those unfamiliar with the surroundings will fall in line and follow &#xd;</comment>
+  <comment> the people surrounding them.&#xd;</comment>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <top>
+    <components> FTH&#xd;</components>
+  </top>
+  <FTH>
+    <type> cell&#xd;</type>
+    <dim> (17, 17, 5)&#xd;</dim>
+    <delay> transport&#xd;</delay>
+    <defaultDelayTime> 1000&#xd;</defaultDelayTime>
+    <border> nowrapped&#xd;</border>
+    <comment>Floor plane neighbors&#xd;</comment>
+    <neighbors> FTH(-2,-2,0) FTH(-2,-1,0) FTH(-2,0,0) FTH(-2,1,0) FTH(-2,2,0)&#xd;</neighbors>
+    <neighbors> FTH(-1,-2,0) FTH(-1,-1,0) FTH(-1,0,0) FTH(-1,1,0) FTH(-1,2,0)&#xd;</neighbors>
+    <neighbors> FTH(0,-2,0)  FTH(0,-1,0)  FTH(0,0,0)  FTH(0,1,0)  FTH(0,2,0)&#xd;</neighbors>
+    <neighbors> FTH(1,-2,0)  FTH(1,-1,0)  FTH(1,0,0)  FTH(1,1,0)  FTH(1,2,0)&#xd;</neighbors>
+    <neighbors> FTH(2,-2,0)  FTH(2,-1,0)  FTH(2,0,0)  FTH(2,1,0)  FTH(2,2,0)&#xd;</neighbors>
+    <comment>Distance plane neighbors. Plan to use the neighbors two cells away in order to determine direction&#xd;</comment>
+    <neighbors>                           FTH(-2,0,1)&#xd;</neighbors>
+    <neighbors>              FTH(-1,-1,1) FTH(-1,0,1) FTH(-1,1,1) 	&#xd;</neighbors>
+    <neighbors> FTH(0,-2,1)  FTH(0,-1,1)  FTH(0,0,1)  FTH(0,1,1)  FTH(0,2,1)&#xd;</neighbors>
+    <neighbors>              FTH(1,-1,1)  FTH(1,0,1)  FTH(1,1,1)&#xd;</neighbors>
+    <neighbors>                           FTH(2,0,1)  	&#xd;</neighbors>
+    <comment> Panic Transfer&#xd;</comment>
+    <neighbors> FTH(0,0,2)&#xd;</neighbors>
+    <neighbors> FTH(0,0,-2)&#xd;</neighbors>
+    <comment>Alternate plane neighbors.&#xd;</comment>
+    <neighbors> FTH(0,0,4)&#xd;</neighbors>
+    <comment>Initialize Floor Map&#xd;</comment>
+    <initialvalue> 0&#xd;</initialvalue>
+    <initialCellsValue> FTH.val&#xd;</initialCellsValue>
+    <comment>Alternate plane&#xd;</comment>
+    <zone> alternate_plane  { (0,0,0)..(16,16,4) }&#xd;</zone>
+    <comment>Patrol plane&#xd;</comment>
+    <zone> patrol_plane 	{ (0,0,1)..(16,16,3) }&#xd;</zone>
+    <comment>Panic plane&#xd;</comment>
+    <zone> panic_plane  { (0,0,0)..(16,16,2) }&#xd;</zone>
+    <comment>Distance plane&#xd;</comment>
+    <zone> dist_plane 	{ (0,0,1)..(16,16,1) }&#xd;</zone>
+    <comment>Maze plane&#xd;</comment>
+    <zone> floor_plane 	{ (0,0,0)..(16,16,0) }&#xd;</zone>
+    <localtransition> fth-rule&#xd;</localtransition>
+  </FTH>
+  <alternate_plane>
+    <rule> {(0,0,0)}    1000 { t }&#xd;</rule>
+  </alternate_plane>
+  <patrol_plane>
+    <rule> {(0,0,0)}    1000 { t }&#xd;</rule>
+  </patrol_plane>
+  <panic_plane>
+    <comment>rule : {(0,0,-2)} 0 { t }&#xd;</comment>
+    <rule> {(0,0,0)} 1000 {15*(0,0,-2)=(0,0,0)}&#xd;</rule>
+    <rule> {(0,0,-2)*6} 1000 {3*(0,0,-2)=(0,0,0)}&#xd;</rule>
+    <rule> {(0,0,-2)*9} 1000 {6*(0,0,-2)=(0,0,0)}&#xd;</rule>
+    <rule> {(0,0,-2)*12} 1000 {9*(0,0,-2)=(0,0,0)}&#xd;</rule>
+    <rule> {(0,0,-2)*15} 1000 {12*(0,0,-2)=(0,0,0)}&#xd;</rule>
+    <rule> {(0,0,-2)*3} 1000 {(0,0,-2)&gt;0}&#xd;</rule>
+    <rule> 0 1000 {(0,0,0)!=(0,0,-2)}&#xd;</rule>
+    <rule> {(0,0,0)}    1000 { t }&#xd;</rule>
+  </panic_plane>
+  <dist_plane>
+    <rule> {(0,0,0)}    1000 { t }&#xd;</rule>
+  </dist_plane>
+</CDPlusPlus_Builder_Version_1.0.0>

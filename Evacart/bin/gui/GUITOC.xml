@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+
+<toc version="1.0">
+	<tocitem text="GUI" target="main"> 
+		<tocitem text="SPANISH"> 
+			<tocitem text="Introducción" target="introduction"/>
+			<tocitem text="Acoplados" image="acoplados">
+				<tocitem text="Distribucion" target="acoplados_distribucion"/>
+				<tocitem text="Agregar Unidades" target="acoplados_agregar_unidades">
+					<tocitem text="Agregar Unidades Modelo Atomico" target="acoplados_atomic_unit" />
+					<tocitem text="Agregar Unidades Modelo Acoplado" target="acoplados_coupled_unit" />
+					<tocitem text="Agregar Unidades Puerto" target="acoplados_puertos" />
+				</tocitem>
+				<tocitem text="Explosion de Unidades" target="acoplados_explosion" />
+				<tocitem text="Importando Modelos" target="importing" />		    
+			</tocitem>
+			<tocitem text="About" target ="about"/>
+		</tocitem>
+
+		<tocitem text="ENGLISH">     
+			<tocitem text="Introduction" target="introduction_en"/>
+			<tocitem text="Atomic" image="atomic">
+				<tocitem text="Distribution" target="atomicos_distribucion_en"/>
+				<tocitem text="Adding Units" target="atomicos_agregar_unidades_en">
+					<tocitem text="Adding States" target="atomicos_atomic_unit_en" />
+					<tocitem text="Adding Ports" target="atomicos_puertos_en" />
+				</tocitem>
+			</tocitem>
+			<tocitem text="Coupled" image="acoplados">
+				<tocitem text="Distribution" target="acoplados_distribucion_en"/>
+				<tocitem text="Adding Units" target="acoplados_agregar_unidades_en">
+					<tocitem text="Adding Atomic Model Units" target="acoplados_atomic_unit_en" />
+					<tocitem text="Adding Coupled Model Units" target="acoplados_coupled_unit_en" />
+					<tocitem text="Adding Port Units" target="acoplados_puertos_en" />
+				</tocitem>
+				<tocitem text="Explosion of Units" target="acoplados_explosion_en" />
+				<tocitem text="Importing Models" target="importing_en" />
+			</tocitem>
+			<tocitem text="About" target ="about_en"/>
+		</tocitem>
+	</tocitem>	
+</toc>

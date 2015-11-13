@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry exported="true" kind="lib" path="D:/study/C_eclipse/eclipse/plugins/org.eclipse.swt.win32.win32.x86_3.6.2.v3659c.jar" sourcepath="D:/study/C_eclipse/eclipse/plugins/org.eclipse.swt.win32.win32.x86.source_3.6.2.v3659c.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/D:/study/C_eclipse/eclipse/plugins/org.eclipse.platform.doc.isv_3.6.2.r362_v20110111.jar!/reference/api"/>
+		</attributes>
+		<accessrules>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/accessibility/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/awt/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/browser/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/custom/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/dnd/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/events/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/graphics/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/layout/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/opengl/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/printing/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/program/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/widgets/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/swt/internal/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/swt/internal/image/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/swt/internal/theme/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/swt/ole/win32/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/swt/internal/gdip/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/swt/internal/ole/win32/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/swt/internal/win32/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/swt/internal/opengl/win32/*"/>
+			<accessrule ignoreifbetter="true" kind="nonaccessible" pattern="**/*"/>
+		</accessrules>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/jfreechart-1.0.19-swt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/jfreechart-1.0.19-experimental.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/jfreechart-1.0.19-swt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/jfreesvg-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/orsoncharts-1.4-eval-nofx.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/orsonpdf-1.6-eval.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/servlet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YANGN_000/Desktop/New folder/swtgraphics2d.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

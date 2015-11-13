@@ -1,0 +1,2 @@
+cd /D "D:\study\JAVA\android workspace\Evacart\bin\Evacart workspace\executions"
+"D:\study\JAVA\android workspace\Evacart\bin\Evacart workspace\simuOrig.exe" -m"FTH_GD.ma" -o"user_GD.out" -l"user_GD.log" -t"00:01:00:000" 

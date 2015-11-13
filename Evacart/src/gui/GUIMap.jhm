@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/map_1_0.dtd">
+
+<map version="1.0">
+	<mapID target="toplevelfolder" url="GUI_HTML/images/toplevel.gif" />
+
+	<mapID target="about" url="GUI_HTML/spanish/about.html" />
+	<mapID target="introduction" url="GUI_HTML/spanish/introduction.html" />
+	<mapID target="acoplados" url="GUI_HTML/spanish/coupled/addCoupled.gif" />
+	<mapID target="acoplados_agregar_unidades" url="GUI_HTML/spanish/coupled/agregar_unidades.html" />
+	<mapID target="acoplados_atomic_unit" url="GUI_HTML/spanish/coupled/atomic_unit.html" />
+	<mapID target="acoplados_coupled_unit" url="GUI_HTML/spanish/coupled/coupled_unit.html" />
+	<mapID target="acoplados_distribucion" url="GUI_HTML/spanish/coupled/distribucion.html" />
+	<mapID target="acoplados_explosion" url="GUI_HTML/spanish/coupled/explosion.html" />
+	<mapID target="acoplados_puertos" url="GUI_HTML/spanish/coupled/puertos.html" />
+	<mapID target="importing" url="GUI_HTML/spanish/coupled/importing.html" />
+	<mapID target="atomicos" url="GUI_HTML/spanish/atomic/addCoupled.gif" />
+	<mapID target="atomicos_agregar_unidades" url="GUI_HTML/spanish/atomic/agregar_unidades.html" />
+	<mapID target="atomicos_atomic_unit" url="GUI_HTML/spanish/atomic/atomic_unit.html" />
+	<mapID target="atomicos_coupled_unit" url="GUI_HTML/spanish/atomic/coupled_unit.html" />
+	<mapID target="atomicos_distribucion" url="GUI_HTML/spanish/atomic/distribucion.html" />
+	<mapID target="atomicos_explosion" url="GUI_HTML/spanish/atomic/explosion.html" />
+	<mapID target="atomicos_puertos" url="GUI_HTML/spanish/atomic/puertos.html" />
+	
+	<mapID target="about_en" url="GUI_HTML/english/about.html" />
+	<mapID target="introduction_en" url="GUI_HTML/english/introduction.html" />
+	<mapID target="acoplados_en" url="GUI_HTML/english/coupled/addCoupled.gif" />
+	<mapID target="acoplados_agregar_unidades_en" url="GUI_HTML/english/coupled/agregar_unidades.html" />
+	<mapID target="acoplados_atomic_unit_en" url="GUI_HTML/english/coupled/atomic_unit.html" />
+	<mapID target="acoplados_coupled_unit_en" url="GUI_HTML/english/coupled/coupled_unit.html" />
+	<mapID target="acoplados_distribucion_en" url="GUI_HTML/english/coupled/distribucion.html" />
+	<mapID target="acoplados_explosion_en" url="GUI_HTML/english/coupled/explosion.html" />
+	<mapID target="acoplados_puertos_en" url="GUI_HTML/english/coupled/puertos.html" />
+	<mapID target="atomicos_en" url="GUI_HTML/english/atomic/addCoupled.gif" />
+	<mapID target="atomicos_agregar_unidades_en" url="GUI_HTML/english/atomic/agregar_unidades.html" />
+	<mapID target="atomicos_atomic_unit_en" url="GUI_HTML/english/atomic/atomic_unit.html" />
+	<mapID target="atomicos_coupled_unit_en" url="GUI_HTML/english/atomic/coupled_unit.html" />
+	<mapID target="atomicos_distribucion_en" url="GUI_HTML/english/atomic/distribucion.html" />
+	<mapID target="atomicos_explosion_en" url="GUI_HTML/english/atomic/explosion.html" />
+	<mapID target="atomicos_puertos_en" url="GUI_HTML/english/atomic/puertos.html" />
+	<mapID target="importing_en" url="GUI_HTML/english/coupled/importing.html" />	
+
+</map>

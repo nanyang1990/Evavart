@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDPlusPlus_Builder_Version_1.0.0>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</comment>
+  <comment> Directional.ma</comment>
+  <comment> Author: Ryan Lawler</comment>
+  <comment/>
+  <comment> Description: This model describes egress when evacuees know the </comment>
+  <comment> direction to get to the exit.</comment>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</comment>
+  <top>
+    <components> Directional</components>
+  </top>
+  <Directional>
+    <type> cell</type>
+    <dim> (17, 17, 2)</dim>
+    <delay> transport</delay>
+    <defaultDelayTime> 1000</defaultDelayTime>
+    <border> nowrapped</border>
+    <comment>Maze plane neighbors</comment>
+    <neighbors> Directional(-1,-1,0) Directional(-1,0,0) Directional(-1,1,0)</neighbors>
+    <neighbors> Directional(0,-1,0)  Directional(0,0,0)  Directional(0,1,0)</neighbors>
+    <neighbors> Directional(1,-1,0)  Directional(1,0,0)  Directional(1,1,0)</neighbors>
+    <comment>Maze plane to access dist plane. Plan to use the neighbors two cells away in order to determine dire</comment>
+    <neighbors>                                           Directional(-2,0,1)</neighbors>
+    <neighbors>                      Directional(-1,-1,1) Directional(-1,0,1) Directional(-1,1,1) 	</neighbors>
+    <neighbors> Directional(0,-2,1)  Directional(0,-1,1)  Directional(0,0,1)  Directional(0,1,1)  Directional(0,2,1</neighbors>
+    <neighbors>                      Directional(1,-1,1)  Directional(1,0,1)  Directional(1,1,1)</neighbors>
+    <neighbors>                                           Directional(2,0,1)  	</neighbors>
+    <comment>Initialize Floor Map</comment>
+    <initialvalue> -1</initialvalue>
+    <initialCellsValue>Directional.val</initialCellsValue>
+    <comment>Distance plane</comment>
+    <zone> dist_plane 	{ (0,0,1)..(16,16,1) }</zone>
+    <comment>Maze plane</comment>
+    <zone> floor_plane 	{ (0,0,0)..(16,16,0) }</zone>
+    <localtransition> directional-rule</localtransition>
+  </Directional>
+  <dist_plane>
+    <rule> {(0,0,0)}    1000 { t }</rule>
+  </dist_plane>
+  <floor_plane>
+    <comment>Get Direction</comment>
+    <rule> 10 1000 {(0,0,0)&gt;=1 and (0,0,0)&lt;9 and (0,0,1)=1}</rule>
+    <rule> 20 1000 {(0,0,0)&gt;=1 and (0,0,0)&lt;9 and (0,0,1)=2}</rule>
+    <rule> 30 1000 {(0,0,0)&gt;=1 and (0,0,0)&lt;9 and (0,0,1)=3}</rule>
+    <rule> 40 1000 {(0,0,0)&gt;=1 and (0,0,0)&lt;9 and (0,0,1)=4}</rule>
+    <rule> 50 1000 {(0,0,0)&gt;=1 and (0,0,0)&lt;9 and (0,0,1)=5}</rule>
+    <rule> 60 1000 {(0,0,0)&gt;=1 and (0,0,0)&lt;9 and (0,0,1)=6} </rule>
+    <rule> 70 1000 {(0,0,0)&gt;=1 and (0,0,0)&lt;9 and (0,0,1)=7}</rule>
+    <rule> 80 1000 {(0,0,0)&gt;=1 and (0,0,0)&lt;9 and (0,0,1)=8} </rule>
+    <comment>Enter Cell</comment>
+    <rule> 1 1000 {(0,0,0)=0 and (1,0,0)=10}</rule>
+    <rule> 2 1000 {(0,0,0)=0 and (1,-1,0)=20}</rule>
+    <rule> 3 1000 {(0,0,0)=0 and (0,-1,0)=30}</rule>
+    <rule> 4 1000 {(0,0,0)=0 and (-1,-1,0)=40}</rule>
+    <rule> 5 1000 {(0,0,0)=0 and (-1,0,0)=50}</rule>
+    <rule> 6 1000 {(0,0,0)=0 and (-1,1,0)=60}</rule>
+    <rule> 7 1000 {(0,0,0)=0 and (0,1,0)=70}</rule>
+    <rule> 8 1000 {(0,0,0)=0 and (1,1,0)=80}</rule>
+    <comment>Leave Cell</comment>
+    <rule> 0 1000 {((0,0,0)=10 and (-1,0,0)=0) or ((0,0,0)=10 and (-1,0,0)=9)}</rule>
+    <rule> 0 1000 {((0,0,0)=20 and (-1,1,0)=0) or ((0,0,0)=20 and (-1,1,0)=9)}</rule>
+    <rule> 0 1000 {((0,0,0)=30 and (0,1,0)=0) or ((0,0,0)=30 and (0,1,0)=9)}</rule>
+    <rule> 0 1000 {((0,0,0)=40 and (1,1,0)=0) or ((0,0,0)=40 and (1,1,0)=9)}</rule>
+    <rule> 0 1000 {((0,0,0)=50 and (1,0,0)=0) or ((0,0,0)=50 and (1,0,0)=9)}</rule>
+    <rule> 0 1000 {((0,0,0)=60 and (1,-1,0)=0) or ((0,0,0)=60 and (1,-1,0)=9)}</rule>
+    <rule> 0 1000 {((0,0,0)=70 and (0,-1,0)=0) or ((0,0,0)=70 and (0,-1,0)=9)}</rule>
+    <rule> 0 1000 {((0,0,0)=80 and (-1,-1,0)=0) or ((0,0,0)=80 and (-1,-1,0)=9)}</rule>
+    <rule> {(0,0,0)} 1000 { t }</rule>
+  </floor_plane>
+  <directional-rule>
+    <rule> {(0,0,0)} 1000 { t }</rule>
+  </directional-rule>
+</CDPlusPlus_Builder_Version_1.0.0>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDPlusPlus_Builder_Version_1.0.0>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <comment> PWRO.ma&#xd;</comment>
+  <comment> Author: Ryan Lawler&#xd;</comment>
+  <comment/>
+  <comment> Description: This model describes a patrol evacuation procedure&#xd;</comment>
+  <comment> where an authority figure follows a patrol route to ensure that all&#xd;</comment>
+  <comment> personnel have been evacuated.&#xd;</comment>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <top>
+    <components> PWRO&#xd;</components>
+  </top>
+  <PWRO>
+    <type> cell&#xd;</type>
+    <dim> (17, 17, 3)&#xd;</dim>
+    <delay> transport&#xd;</delay>
+    <defaultDelayTime> 100&#xd;</defaultDelayTime>
+    <border> nowrapped&#xd;</border>
+    <comment>Floor plane neighbors&#xd;</comment>
+    <neighbors> PWRO(-1,-1,0) PWRO(-1,0,0) PWRO(-1,1,0)&#xd;</neighbors>
+    <neighbors> PWRO(0,-1,0)  PWRO(0,0,0)  PWRO(0,1,0)&#xd;</neighbors>
+    <neighbors> PWRO(1,-1,0)  PWRO(1,0,0)  PWRO(1,1,0)&#xd;</neighbors>
+    <comment>Floor plane to access patrol plane. &#xd;</comment>
+    <neighbors> PWRO(-1,-1,1) PWRO(-1,0,1) PWRO(-1,1,1) 	&#xd;</neighbors>
+    <neighbors> PWRO(0,-1,1)  PWRO(0,0,1)  PWRO(0,1,1)&#xd;</neighbors>
+    <neighbors> PWRO(1,-1,1)  PWRO(1,0,1)  PWRO(1,1,1)&#xd;</neighbors>
+    <comment>Patrol plane to access floor plane. &#xd;</comment>
+    <neighbors> PWRO(-1,-1,-1) PWRO(-1,0,-1) PWRO(-1,1,-1) 	&#xd;</neighbors>
+    <neighbors> PWRO(0,-1,-1)  PWRO(0,0,-1)  PWRO(0,1,-1)&#xd;</neighbors>
+    <neighbors> PWRO(1,-1,-1)  PWRO(1,0,-1)  PWRO(1,1,-1)  	&#xd;</neighbors>
+    <comment>Floor plane to access direction plane&#xd;</comment>
+    <neighbors> PWRO(-1,-1,2) PWRO(-1,0,2) PWRO(-1,1,2) 	&#xd;</neighbors>
+    <neighbors> PWRO(0,-1,2)  PWRO(0,0,2)  PWRO(0,1,2)&#xd;</neighbors>
+    <neighbors> PWRO(1,-1,2)  PWRO(1,0,2)  PWRO(1,1,2)&#xd;</neighbors>
+    <comment>Initialize Floor Map&#xd;</comment>
+    <initialvalue> 0&#xd;</initialvalue>
+    <initialCellsValue> PWRO.val&#xd;</initialCellsValue>
+    <comment>Distance plane&#xd;</comment>
+    <zone> patrol_plane 	{ (0,0,1)..(16,16,1) }&#xd;</zone>
+    <comment>Floor plane&#xd;</comment>
+    <zone> floor_plane 	{ (0,0,0)..(16,16,0) }&#xd;</zone>
+    <comment>Direction plance&#xd;</comment>
+    <zone> direction_plane { (0,0,2)..(16,16,2) }&#xd;</zone>
+    <localtransition> patrol-rule&#xd;</localtransition>
+  </PWRO>
+  <patrol_plane>
+    <rule> 23 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=11}&#xd;</rule>
+    <rule> 22 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=12}&#xd;</rule>
+    <rule> 21 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=13}&#xd;</rule>
+    <rule> 37 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=25}&#xd;</rule>
+    <rule> 36 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=26}&#xd;</rule>
+    <rule> 35 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=27}&#xd;</rule>
+    <rule> 67 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=55}&#xd;</rule>
+    <rule> 66 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=56}&#xd;</rule>
+    <rule> 65 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=57}&#xd;</rule>
+    <rule> 81 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=69}&#xd;</rule>
+    <rule> 80 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=70}&#xd;</rule>
+    <rule> 79 100 {(0,0,-1)&gt;=310 and (0,0,-1)&lt;390 and (0,0,0)=71}&#xd;</rule>
+    <rule> {(0,0,0)}    100 { t }&#xd;</rule>
+  </patrol_plane>
+  <floor_plane>
+    <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+    <comment> CHANGE STATE&#xd;</comment>
+    <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+    <rule> 201 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190) and stateCount(301)&gt;0}&#xd;</rule>
+    <rule> 201 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190) and stateCount(302)&gt;0}&#xd;</rule>
+    <rule> 201 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190) and stateCount(303)&gt;0}&#xd;</rule>
+    <rule> 201 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190) and stateCount(304)&gt;0}&#xd;</rule>
+    <rule> 201 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190) and stateCount(305)&gt;0}&#xd;</rule>
+    <rule> 201 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190) and stateCount(306)&gt;0}&#xd;</rule>
+    <rule> 201 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190) and stateCount(307)&gt;0}&#xd;</rule>
+    <rule> 201 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190) and stateCount(308)&gt;0}&#xd;</rule>
+    <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+    <comment> PATROL MOVEMENT&#xd;</comment>
+    <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+    <comment>Get Direction&#xd;</comment>
+    <rule> 310 100 {(0,0,0)&gt;=301 and (0,0,0)&lt;309 and ((-1,0,1)=((0,0,1)+1))}&#xd;</rule>
+    <rule> 320 100 {(0,0,0)&gt;=301 and (0,0,0)&lt;309 and ((-1,1,1)=((0,0,1)+1))}&#xd;</rule>
+    <rule> 330 100 {(0,0,0)&gt;=301 and (0,0,0)&lt;309 and ((0,1,1)=((0,0,1)+1))}&#xd;</rule>
+    <rule> 340 100 {(0,0,0)&gt;=301 and (0,0,0)&lt;309 and ((1,1,1)=((0,0,1)+1))}&#xd;</rule>
+    <rule> 350 100 {(0,0,0)&gt;=301 and (0,0,0)&lt;309 and ((1,0,1)=((0,0,1)+1))}&#xd;</rule>
+    <rule> 360 100 {(0,0,0)&gt;=301 and (0,0,0)&lt;309 and ((1,-1,1)=((0,0,1)+1))} &#xd;</rule>
+    <rule> 370 100 {(0,0,0)&gt;=301 and (0,0,0)&lt;309 and ((0,-1,1)=((0,0,1)+1))}&#xd;</rule>
+    <rule> 380 100 {(0,0,0)&gt;=301 and (0,0,0)&lt;309 and ((-1,-1,1)=((0,0,1)+1))} &#xd;</rule>
+    <comment>Enter Cell&#xd;</comment>
+    <rule> 301 100 {(0,0,0)=0 and (1,0,0)=310}&#xd;</rule>
+    <rule> 302 100 {(0,0,0)=0 and (1,-1,0)=320}&#xd;</rule>
+    <rule> 303 100 {(0,0,0)=0 and (0,-1,0)=330}&#xd;</rule>
+    <rule> 304 100 {(0,0,0)=0 and (-1,-1,0)=340}&#xd;</rule>
+    <rule> 305 100 {(0,0,0)=0 and (-1,0,0)=350}&#xd;</rule>
+    <rule> 306 100 {(0,0,0)=0 and (-1,1,0)=360}&#xd;</rule>
+    <rule> 307 100 {(0,0,0)=0 and (0,1,0)=370}&#xd;</rule>
+    <rule> 308 100 {(0,0,0)=0 and (1,1,0)=380}&#xd;</rule>
+    <comment>Leave Cell&#xd;</comment>
+    <rule> 0 100 {((0,0,0)=310 and (-1,0,0)=0) or ((0,0,0)=301 and (-1,0,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=320 and (-1,1,0)=0) or ((0,0,0)=302 and (-1,1,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=330 and (0,1,0)=0) or ((0,0,0)=303 and (0,1,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=340 and (1,1,0)=0) or ((0,0,0)=304 and (1,1,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=350 and (1,0,0)=0) or ((0,0,0)=305 and (1,0,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=360 and (1,-1,0)=0) or ((0,0,0)=306 and (1,-1,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=370 and (0,-1,0)=0) or ((0,0,0)=307 and (0,-1,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=380 and (-1,-1,0)=0) or ((0,0,0)=308 and (-1,-1,0)=900)}&#xd;</rule>
+    <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+    <comment> RANDOM MOVEMENT&#xd;</comment>
+    <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+    <comment>Get Direction&#xd;</comment>
+    <rule> {((randInt(7)+1)*10)+100} 100 {(0,0,0)&gt;=101 and (0,0,0)&lt;109}&#xd;</rule>
+    <comment>Enter Cell&#xd;</comment>
+    <rule> 101 100 {(0,0,0)=0 and (1,0,0)=110}&#xd;</rule>
+    <rule> 102 100 {(0,0,0)=0 and (1,-1,0)=120}&#xd;</rule>
+    <rule> 103 100 {(0,0,0)=0 and (0,-1,0)=130}&#xd;</rule>
+    <rule> 104 100 {(0,0,0)=0 and (-1,-1,0)=140}&#xd;</rule>
+    <rule> 105 100 {(0,0,0)=0 and (-1,0,0)=150}&#xd;</rule>
+    <rule> 106 100 {(0,0,0)=0 and (-1,1,0)=160}&#xd;</rule>
+    <rule> 107 100 {(0,0,0)=0 and (0,1,0)=170}&#xd;</rule>
+    <rule> 108 100 {(0,0,0)=0 and (1,1,0)=180}&#xd;</rule>
+    <comment>Leave Cell&#xd;</comment>
+    <rule> 0 100 {((0,0,0)=110 and (-1,0,0)=0) or ((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=120 and (-1,1,0)=0) or ((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=130 and (0,1,0)=0) or ((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=140 and (1,1,0)=0) or ((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=150 and (1,0,0)=0)  or ((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=160 and (1,-1,0)=0) or ((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=170 and (0,-1,0)=0)  or ((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=180 and (-1,-1,0)=0) or ((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)&gt;100 and (0,0,0)&lt;190 and stateCount(900)&gt;0)}&#xd;</rule>
+    <comment>Try Again&#xd;</comment>
+    <rule> 101 100 {((0,0,0)=110 and (-1,0,0)!=0)}&#xd;</rule>
+    <rule> 101 100 {((0,0,0)=120 and (-1,1,0)!=0)}&#xd;</rule>
+    <rule> 101 100 {((0,0,0)=130 and (0,1,0)!=0)}&#xd;</rule>
+    <rule> 101 100 {((0,0,0)=140 and (1,1,0)!=0)}&#xd;</rule>
+    <rule> 101 100 {((0,0,0)=150 and (1,0,0)!=0)}&#xd;</rule>
+    <rule> 101 100 {((0,0,0)=160 and (1,-1,0)!=0)}&#xd;</rule>
+    <rule> 101 100 {((0,0,0)=170 and (0,-1,0)!=0)}&#xd;</rule>
+    <rule> 101 100 {((0,0,0)=180 and (-1,-1,0)!=0)}&#xd;</rule>
+    <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+    <comment> DIRECTIONAL MOVEMENT&#xd;</comment>
+    <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+    <comment>Get Direction&#xd;</comment>
+    <rule> 210 100 {(0,0,0)&gt;=201 and (0,0,0)&lt;209 and (0,0,2)=1} %North&#xd;</rule>
+    <rule> 220 100 {(0,0,0)&gt;=201 and (0,0,0)&lt;209 and (0,0,2)=2}&#xd;</rule>
+    <rule> 230 100 {(0,0,0)&gt;=201 and (0,0,0)&lt;209 and (0,0,2)=3}&#xd;</rule>
+    <rule> 240 100 {(0,0,0)&gt;=201 and (0,0,0)&lt;209 and (0,0,2)=4}&#xd;</rule>
+    <rule> 250 100 {(0,0,0)&gt;=201 and (0,0,0)&lt;209 and (0,0,2)=5}&#xd;</rule>
+    <rule> 260 100 {(0,0,0)&gt;=201 and (0,0,0)&lt;209 and (0,0,2)=6} &#xd;</rule>
+    <rule> 270 100 {(0,0,0)&gt;=201 and (0,0,0)&lt;209 and (0,0,2)=7}&#xd;</rule>
+    <rule> 280 100 {(0,0,0)&gt;=201 and (0,0,0)&lt;209 and (0,0,2)=8} &#xd;</rule>
+    <comment>Enter Cell&#xd;</comment>
+    <rule> 201 100 {(0,0,0)=0 and (1,0,0)=210}&#xd;</rule>
+    <rule> 202 100 {(0,0,0)=0 and (1,-1,0)=220}&#xd;</rule>
+    <rule> 203 100 {(0,0,0)=0 and (0,-1,0)=230}&#xd;</rule>
+    <rule> 204 100 {(0,0,0)=0 and (-1,-1,0)=240}&#xd;</rule>
+    <rule> 205 100 {(0,0,0)=0 and (-1,0,0)=250}&#xd;</rule>
+    <rule> 206 100 {(0,0,0)=0 and (-1,1,0)=260}&#xd;</rule>
+    <rule> 207 100 {(0,0,0)=0 and (0,1,0)=270}&#xd;</rule>
+    <rule> 208 100 {(0,0,0)=0 and (1,1,0)=280}&#xd;</rule>
+    <comment>Leave Cell&#xd;</comment>
+    <rule> 0 100 {((0,0,0)=210 and (-1,0,0)=0) or ((0,0,0)=210 and (-1,0,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=220 and (-1,1,0)=0) or ((0,0,0)=220 and (-1,1,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=230 and (0,1,0)=0) or ((0,0,0)=230 and (0,1,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=240 and (1,1,0)=0) or ((0,0,0)=240 and (1,1,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=250 and (1,0,0)=0) or ((0,0,0)=250 and (1,0,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=260 and (1,-1,0)=0) or ((0,0,0)=260 and (1,-1,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=270 and (0,-1,0)=0) or ((0,0,0)=270 and (0,-1,0)=900)}&#xd;</rule>
+    <rule> 0 100 {((0,0,0)=280 and (-1,-1,0)=0) or ((0,0,0)=280 and (-1,-1,0)=900)}&#xd;</rule>
+    <rule> {(0,0,0)} 100 { t }&#xd;</rule>
+  </floor_plane>
+  <direction_plane>
+    <rule> {(0,0,0)} 100 { t }&#xd;</rule>
+  </direction_plane>
+</CDPlusPlus_Builder_Version_1.0.0>

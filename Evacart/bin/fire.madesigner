@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_CxSGIKsIEeS5YondXMDRAA" modelName="top" defined="true" sourceFileRelativePath="fire.ma">
+    <coupledModels xmi:type="CoupledModelInstance" xmi:id="_CxSGIasIEeS5YondXMDRAA" instanceName="forestfire">
+      <modelType xmi:type="CoupledModelType" xmi:id="_CxSGIqsIEeS5YondXMDRAA" modelName="forestfire"/>
+    </coupledModels>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_CxStMKsIEeS5YondXMDRAA" type="DEVS" element="_CxSGIKsIEeS5YondXMDRAA" name="fire.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_CxStMasIEeS5YondXMDRAA"/>
+  </notation:Diagram>
+</xmi:XMI>

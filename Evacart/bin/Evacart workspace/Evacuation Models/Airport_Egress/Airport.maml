@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDPlusPlus_Builder_Version_1.0.0>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <comment> Airport.ma&#xd;</comment>
+  <comment> Author: Ryan Lawler&#xd;</comment>
+  <comment/>
+  <comment> Description: This model describes egress from the DAB airport.&#xd;</comment>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <top>
+    <components> Check_In Lobby Baggage Plaza&#xd;</components>
+    <link> out1@Lobby in1@Check_In&#xd;</link>
+    <link> out2@Lobby in2@Baggage&#xd;</link>
+    <link> out3@Plaza in3@Lobby&#xd;</link>
+  </top>
+</CDPlusPlus_Builder_Version_1.0.0>

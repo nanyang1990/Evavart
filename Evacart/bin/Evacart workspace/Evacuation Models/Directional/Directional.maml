@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDPlusPlus_Builder_Version_1.0.0>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <comment> Directional.ma&#xd;</comment>
+  <comment> Author: Ryan Lawler&#xd;</comment>
+  <comment/>
+  <comment> Description: This model describes egress when evacuees know the &#xd;</comment>
+  <comment> direction to get to the exit.&#xd;</comment>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <top>
+    <components> Directional&#xd;</components>
+  </top>
+</CDPlusPlus_Builder_Version_1.0.0>

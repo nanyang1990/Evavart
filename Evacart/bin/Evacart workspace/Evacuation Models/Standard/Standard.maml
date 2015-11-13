@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDPlusPlus_Builder_Version_1.0.0>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <comment> Standard.ma&#xd;</comment>
+  <comment> Author: Ryan Lawler&#xd;</comment>
+  <comment/>
+  <comment> Description: This model describes a standard evacuation procedure&#xd;</comment>
+  <comment> for people who are familiar with the surroundings and know where&#xd;</comment>
+  <comment> the exit is. This model uses a persons knowledge of the surroundings&#xd;</comment>
+  <comment> to determine a direction of motion for each step, and then to move&#xd;</comment>
+  <comment> in that direction.&#xd;</comment>
+  <comment>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&#xd;</comment>
+  <top>
+    <components> Standard&#xd;</components>
+  </top>
+</CDPlusPlus_Builder_Version_1.0.0>
